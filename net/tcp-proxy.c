@@ -83,4 +83,17 @@ int main() {
 
 	struct sockaddr_in bind_addr;
 	uv_ip4_addr("0.0.0.0" CLIENT_PORT, &bind_addr);
+
+	uv_tcp_bind(&server, (struct sockaddr*)&bind_addr, 0);
+	int result = uv_listen((uv_stream_t*)&server, 128, on_connection);
+
+	if (result) {
+		fprintf(stderr, "Listen port issue: %s\n", uv_strerror(result));
+		return 1;
+	}
+
+
+	printf("Proxy started on port %d ..\n", CLIENT_PORT);
+
+	return uv_run(loop, UV_RUN_DEFAULT);
 }

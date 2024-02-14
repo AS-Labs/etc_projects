@@ -270,6 +270,9 @@ if args.timestamp:
 if args.lport:
     print("%-7s %-12s %-2s %-16s %-6s %-16s %-5s %s" % ("PID", "COMM",
         "IP", "SADDR", "LPORT", "DADDR", "DPORT", "LAT(ms)"))
+if args.timestamp and args.file:
+    #TODO format to csv
+    print("")
 else:
     print("%-7s %-12s %-2s %-16s %-16s %-5s %s" % ("PID", "COMM", "IP",
         "SADDR", "DADDR", "DPORT", "LAT(ms)"))

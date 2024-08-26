@@ -1,0 +1,189 @@
+==221840== Memcheck, a memory error detector
+==221840== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==221840== Using Valgrind-3.23.0-c54d316124-20240426 and LibVEX; rerun with -h for copyright info
+==221840== Command: ./section_merger
+==221840== Parent PID: 107467
+==221840== 
+--221840-- 
+--221840-- Valgrind options:
+--221840--    --leak-check=full
+--221840--    --show-leak-kinds=all
+--221840--    --track-origins=yes
+--221840--    --verbose
+--221840--    --log-file=valgrind-out.txt
+--221840-- Contents of /proc/version:
+--221840--   Linux version 6.9.12-200.fc40.x86_64 (mockbuild@c8d7f86626ae4d1ab5450ec2dba703ce) (gcc (GCC) 14.1.1 20240701 (Red Hat 14.1.1-7), GNU ld version 2.41-37.fc40) #1 SMP PREEMPT_DYNAMIC Sat Jul 27 15:56:15 UTC 2024
+--221840-- 
+--221840-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand-rdseed-fma
+--221840-- Page sizes: currently 4096, max supported 4096
+--221840-- Valgrind library directory: /usr/libexec/valgrind
+--221840-- Reading syms from /home/as-labs/Documents/code/etc_projects/scripts/fw_consolidation/section_merger
+--221840-- Reading syms from /usr/lib64/ld-linux-x86-64.so.2
+--221840-- Warning: cross-CU LIMITATION: some inlined fn names
+--221840-- might be shown as UnknownInlinedFun
+--221840-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--221840--    object doesn't have a dynamic symbol table
+--221840-- Scheduler: using generic scheduler lock implementation.
+--221840-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==221840== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-221840-by-as-labs-on-as-devlap
+==221840== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-221840-by-as-labs-on-as-devlap
+==221840== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-221840-by-as-labs-on-as-devlap
+==221840== 
+==221840== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==221840== don't want to do, unless you know exactly what you're doing,
+==221840== or are doing some strange experiment):
+==221840==   /usr/libexec/valgrind/../../bin/vgdb --pid=221840 ...command...
+==221840== 
+==221840== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==221840==   /path/to/gdb ./section_merger
+==221840== and then give GDB the following command
+==221840==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=221840
+==221840== --pid is optional if only one valgrind process is running
+==221840== 
+==221840== Downloading debug info for /usr/libexec/valgrind/memcheck-amd64-linux...
+--221840--   Considering /home/as-labs/.cache/debuginfod_client/40e5ee157058b38bbd9a1028c320bbe4d0442c8b/debuginfo ..
+--221840--   .. CRC is valid
+==221840== Successfully downloaded debug file for /usr/libexec/valgrind/memcheck-amd64-linux
+==221840== Downloading debug info for /home/as-labs/.cache/debuginfod_client/40e5ee157058b38bbd9a1028c320bbe4d0442c8b/debuginfo...
+--221840--   Considering /home/as-labs/.cache/debuginfod_client/2f6c4fea722ca152c38a321408ce4a7a67d9a28f/debuginfo ..
+--221840--   .. build-id is valid
+==221840== Successfully downloaded debug file for /home/as-labs/.cache/debuginfod_client/40e5ee157058b38bbd9a1028c320bbe4d0442c8b/debuginfo
+--221840-- REDIR: 0x4026360 (ld-linux-x86-64.so.2:strlen) redirected to 0x5821654f (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--221840-- REDIR: 0x4024d20 (ld-linux-x86-64.so.2:strcmp) redirected to 0x58216569 (vgPlain_amd64_linux_REDIR_FOR_strcmp)
+--221840-- REDIR: 0x4024af0 (ld-linux-x86-64.so.2:index) redirected to 0x58216584 (vgPlain_amd64_linux_REDIR_FOR_index)
+--221840-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--221840-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==221840== WARNING: new redirection conflicts with existing -- ignoring it
+--221840--     old: 0x04024d20 (strcmp              ) R-> (0000.0) 0x58216569 vgPlain_amd64_linux_REDIR_FOR_strcmp
+--221840--     new: 0x04024d20 (strcmp              ) R-> (2016.0) 0x0484e350 strcmp
+==221840== WARNING: new redirection conflicts with existing -- ignoring it
+--221840--     old: 0x04026360 (strlen              ) R-> (0000.0) 0x5821654f vgPlain_amd64_linux_REDIR_FOR_strlen
+--221840--     new: 0x04026360 (strlen              ) R-> (2007.0) 0x0484d000 strlen
+--221840-- REDIR: 0x4024150 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4852aa0 (mempcpy)
+--221840-- Reading syms from /usr/lib64/libc.so.6
+==221840== Downloading debug info for /usr/lib64/libc.so.6...
+--221840--   Considering /home/as-labs/.cache/debuginfod_client/8f53abaad945a669f2bdcd25f471d80e077568ef/debuginfo ..
+--221840--   .. CRC is valid
+==221840== Successfully downloaded debug file for /usr/lib64/libc.so.6
+--221840-- REDIR: 0x4026500 (ld-linux-x86-64.so.2:strncmp) redirected to 0x484db00 (strncmp)
+--221840-- REDIR: 0x49236d0 (libc.so.6:strnlen) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4923760 (libc.so.6:strpbrk) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4921750 (libc.so.6:strcmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4938e40 (libc.so.6:wcsnlen) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4920750 (libc.so.6:memset) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4938540 (libc.so.6:wcslen) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x499bf00 (libc.so.6:__memcpy_chk) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x49206c0 (libc.so.6:memrchr) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4938de0 (libc.so.6:wcsncpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x491fbf0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4937320 (libc.so.6:wcschr) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4921640 (libc.so.6:index) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4923790 (libc.so.6:rindex) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x49373d0 (libc.so.6:wcscmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4920970 (libc.so.6:stpncpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4944d00 (libc.so.6:wmemchr) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4923570 (libc.so.6:strncmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x49209d0 (libc.so.6:strcasecmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4922960 (libc.so.6:strcspn) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4938310 (libc.so.6:wcscpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x49215d0 (libc.so.6:strcat) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4923470 (libc.so.6:strncasecmp_l) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x49216c0 (libc.so.6:strchrnul) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x491fb00 (libc.so.6:bcmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x49228f0 (libc.so.6:strcpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4920a70 (libc.so.6:strcasecmp_l) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4923340 (libc.so.6:strlen) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4923610 (libc.so.6:strncpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4944d80 (libc.so.6:wmemcmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x499c020 (libc.so.6:__memmove_chk) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+==221840== WARNING: new redirection conflicts with existing -- ignoring it
+--221840--     old: 0x049e0e10 (__memcpy_chk_avx_una) R-> (2030.0) 0x04852bb0 __memcpy_chk
+--221840--     new: 0x049e0e10 (__memcpy_chk_avx_una) R-> (2024.0) 0x048524b0 __memmove_chk
+--221840-- REDIR: 0x4920900 (libc.so.6:stpcpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4920480 (libc.so.6:memmove) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+==221840== Preferring higher priority redirection:
+--221840--     old: 0x049e0e40 (__memcpy_avx_unalign) R-> (2018.0) 0x0484fa20 __memcpy_avx_unaligned_erms
+--221840--     new: 0x049e0e40 (__memcpy_avx_unalign) R-> (2018.1) 0x048517b0 memmove
+--221840-- REDIR: 0x491fa80 (libc.so.6:memchr) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4923960 (libc.so.6:strspn) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x4936f50 (libc.so.6:wcpncpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x49205a0 (libc.so.6:mempcpy) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x49233d0 (libc.so.6:strncasecmp) redirected to 0x48381ea (_vgnU_ifunc_wrapper)
+--221840-- REDIR: 0x49e5a30 (libc.so.6:__strrchr_avx2) redirected to 0x484c7e0 (rindex)
+--221840-- REDIR: 0x491bc10 (libc.so.6:malloc) redirected to 0x48437f0 (malloc)
+--221840-- REDIR: 0x49e2fa0 (libc.so.6:__strchr_avx2) redirected to 0x484ca20 (index)
+--221840-- REDIR: 0x49e0440 (libc.so.6:__memchr_avx2) redirected to 0x484e410 (memchr)
+--221840-- REDIR: 0x49e0e40 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48517b0 (memmove)
+--221840-- REDIR: 0x4a003c0 (libc.so.6:__strcspn_sse42) redirected to 0x4852e50 (strcspn)
+--221840-- REDIR: 0x49e3b80 (libc.so.6:__strlen_avx2) redirected to 0x484cee0 (strlen)
+--221840-- REDIR: 0x49e0e10 (libc.so.6:__memcpy_chk_avx_unaligned_erms) redirected to 0x4852bb0 (__memcpy_chk)
+==221840== Invalid write of size 8
+==221840==    at 0x4012A0: add_item (section_merger.c:26)
+==221840==    by 0x4014A4: main (section_merger.c:80)
+==221840==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==221840== 
+==221840== 
+==221840== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==221840==  Access not within mapped region at address 0x0
+==221840==    at 0x4012A0: add_item (section_merger.c:26)
+==221840==    by 0x4014A4: main (section_merger.c:80)
+==221840==  If you believe this happened as a result of a stack
+==221840==  overflow in your program's main thread (unlikely but
+==221840==  possible), you can try to increase the size of the
+==221840==  main thread stack using the --main-stacksize= flag.
+==221840==  The main thread stack size used in this run was 8388608.
+==221840== 
+==221840== HEAP SUMMARY:
+==221840==     in use at exit: 4,912 bytes in 5 blocks
+==221840==   total heap usage: 5 allocs, 0 frees, 4,912 bytes allocated
+==221840== 
+==221840== Searching for pointers to 5 not-freed blocks
+==221840== Checked 87,584 bytes
+==221840== 
+==221840== 10 bytes in 1 blocks are still reachable in loss record 1 of 5
+==221840==    at 0x4843866: malloc (vg_replace_malloc.c:446)
+==221840==    by 0x49229AE: strdup (strdup.c:42)
+==221840==    by 0x401457: main (section_merger.c:75)
+==221840== 
+==221840== 14 bytes in 1 blocks are definitely lost in loss record 2 of 5
+==221840==    at 0x4843866: malloc (vg_replace_malloc.c:446)
+==221840==    by 0x49229AE: strdup (strdup.c:42)
+==221840==    by 0x40129F: add_item (section_merger.c:26)
+==221840==    by 0x4014A4: main (section_merger.c:80)
+==221840== 
+==221840== 320 bytes in 1 blocks are still reachable in loss record 3 of 5
+==221840==    at 0x4843866: malloc (vg_replace_malloc.c:446)
+==221840==    by 0x401328: main (section_merger.c:43)
+==221840== 
+==221840== 472 bytes in 1 blocks are still reachable in loss record 4 of 5
+==221840==    at 0x4843866: malloc (vg_replace_malloc.c:446)
+==221840==    by 0x48F6147: __fopen_internal (iofopen.c:65)
+==221840==    by 0x4012E1: main (section_merger.c:32)
+==221840== 
+==221840== 4,096 bytes in 1 blocks are still reachable in loss record 5 of 5
+==221840==    at 0x4843866: malloc (vg_replace_malloc.c:446)
+==221840==    by 0x48F55E6: _IO_file_doallocate (filedoalloc.c:101)
+==221840==    by 0x4904933: _IO_doallocbuf (genops.c:347)
+==221840==    by 0x4904933: _IO_doallocbuf (genops.c:342)
+==221840==    by 0x4902633: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+==221840==    by 0x49049E1: _IO_default_uflow (genops.c:362)
+==221840==    by 0x48F7239: _IO_getline_info (iogetline.c:60)
+==221840==    by 0x48F5F85: fgets (iofgets.c:53)
+==221840==    by 0x4014BC: main (section_merger.c:53)
+==221840== 
+==221840== LEAK SUMMARY:
+==221840==    definitely lost: 14 bytes in 1 blocks
+==221840==    indirectly lost: 0 bytes in 0 blocks
+==221840==      possibly lost: 0 bytes in 0 blocks
+==221840==    still reachable: 4,898 bytes in 4 blocks
+==221840==         suppressed: 0 bytes in 0 blocks
+==221840== 
+==221840== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==221840== 
+==221840== 1 errors in context 1 of 2:
+==221840== Invalid write of size 8
+==221840==    at 0x4012A0: add_item (section_merger.c:26)
+==221840==    by 0x4014A4: main (section_merger.c:80)
+==221840==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==221840== 
+==221840== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

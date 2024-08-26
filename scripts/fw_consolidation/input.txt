@@ -1,0 +1,10 @@
+sections1:
+ permit 10203
+ deny 2033
+sections2:
+ permit any
+ permit tcp 102033
+ deny 2033
+sections3:
+ deny any
+ permit tcp service-object

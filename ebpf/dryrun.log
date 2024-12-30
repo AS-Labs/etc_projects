@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/as-labs/Documents/code/etc_projects/ebpf'
+make: Leaving directory '/home/as-labs/Documents/code/etc_projects/ebpf'
+ 
+Makefile:10: *** missing separator (did you mean TAB instead of 8 spaces?).  Stop.
+

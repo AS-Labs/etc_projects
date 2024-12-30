@@ -1,0 +1,5 @@
+#!/bin/bash
+#clang -O2 -Wall -target bpf -c sys_trace.c -o sys_trace.o
+clang -target bpf -I/usr/include/bpf -I/usr/include/linux -c sys_trace.c -o sys_trace.o
+
+#gcc -O2 -Wall -c sys_trace.c -o sys_trace.o -I/usr/include/bcc
